@@ -1,11 +1,28 @@
 .sort {
   position: relative;
+
+  &.open {
+    .sort {
+      &__label {
+        svg {
+          transform: scale(1, 1);
+        }
+      }
+
+      &__popup {
+        animation: open 0.2s;
+      }
+    }
+  }
+
   &__label {
     display: flex;
     align-items: center;
 
     svg {
       margin-right: 8px;
+      transform: scale(1, -1);
+      transition: transform 0.2s ease;
     }
 
     b {
@@ -16,6 +33,22 @@
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+    }
+  }
+
+  @keyframes open {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: initial;
+      transform: translateY(0);
     }
   }
 

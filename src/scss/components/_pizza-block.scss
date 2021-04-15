@@ -46,6 +46,10 @@
           border-radius: 5px;
           cursor: auto;
         }
+        &.disbale {
+          opacity: 0.3;
+          pointer-events: none;
+        }
       }
     }
   }
