@@ -4,7 +4,7 @@ function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [activeClass, setActiveClass] = useState(0);
   const sortRef = useRef();
-  const activeName = items[activeClass];
+  const activeName = items[activeClass].name;
 
   const handleOustideClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
@@ -42,12 +42,12 @@ function SortPopup({ items }) {
         <div className="sort__popup">
           <ul>
             {items &&
-              items.map((name, index) => (
+              items.map((obj, index) => (
                 <li
                   className={activeClass === index ? 'active' : ''}
                   onClick={() => onSelectItem(index)}
-                  key={`${name}_${index}`}>
-                  {name}
+                  key={`${obj.type}_${index}`}>
+                  {obj.name}
                 </li>
               ))}
           </ul>
