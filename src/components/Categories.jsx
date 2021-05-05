@@ -2,10 +2,6 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 const Categories = memo(function Categories({ activeCategory, items, onClickCategory }) {
-  const onSelectItem = (index) => {
-    onClickCategory(index);
-  };
-
   return (
     <div className="categories">
       <ul>
@@ -27,11 +23,11 @@ const Categories = memo(function Categories({ activeCategory, items, onClickCate
 Categories.propTypes = {
   activeCategory: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onClickCategory: PropTypes.func
+  onClickCategory: PropTypes.func.isRequired,
 };
 
 Categories.defaultProps = {
-  activeCategory: 0,
+  activeCategory: 'popular',
   items: [],
 };
 
