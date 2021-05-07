@@ -6,8 +6,9 @@ const SortPopup = memo(function SortPopup({ activeSortType, items, onClickSort }
   const sortRef = useRef();
   const activeName = items.find((obj) => obj.type === activeSortType).name;
 
-  const handleOustideClick = (e) => {
-    if (!e.path.includes(sortRef.current)) {
+  const handleOustideClick = (event) => {
+    const path = event.path || (event.composedPath && event.composedPath());
+    if (!path.includes(sortRef.current)) {
       setVisiblePopup(false);
     }
   };
