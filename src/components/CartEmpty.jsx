@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import emptyCartImg from '../assets/img/empty-cart.png';
-import Button from './Button';
 
 function CartEmpty() {
   return (

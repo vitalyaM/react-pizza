@@ -21,14 +21,17 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchPizzas(category, sortBy));
+    // eslint-disable-next-line
   }, [category, sortBy]);
 
   const onSelectCategory = useCallback((index) => {
     dispatch(setCategory(index));
+    // eslint-disable-next-line
   }, []);
 
   const onSelectSort = useCallback((type) => {
     dispatch(setSortBy(type));
+    // eslint-disable-next-line
   }, []);
 
   const handleAddPizzaToCart = (obj) => {
