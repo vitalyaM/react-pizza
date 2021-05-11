@@ -51,7 +51,7 @@ export default function Home() {
           ? items.map((obj) => (
               <PizzaBlock
                 onClickAddPizza={(obj) => handleAddPizzaToCart(obj)}
-                addedPizzasCount={cartItems[obj.id] && cartItems[obj.id].length}
+                addedPizzasCount={cartItems[obj.id] && cartItems[obj.id].items.length}
                 key={obj.id}
                 {...obj}
               />
